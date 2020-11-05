@@ -1,4 +1,11 @@
 <!-- ここから -->
+<?php  
+session_start();
+
+$_SESSION = [];
+
+session_destroy();
+?>
 <!-- ここまで -->
 <!DOCTYPE html>
 <html lang="ja">

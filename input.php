@@ -1,4 +1,22 @@
 <!-- ここから -->
+<?php
+session_start();
+
+$name = "";
+$trigger = "";
+
+if ( isset($_SESSION["post"]) == true ) {
+	$post = $_SESSION["post"];
+	if ( isset( $post["name"] ) == true ) {
+		$name = $post["name"];
+	}
+
+	if ( isset( $post["trigger"] ) == true ) {
+		$trigger = $post["trigger"];
+	}
+}
+?>
+
 <!-- ここまで -->
 <!DOCTYPE html>
 <html lang="ja">

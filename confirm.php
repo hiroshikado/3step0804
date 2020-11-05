@@ -1,4 +1,20 @@
 <!-- ここから -->
+<?php
+session_start();
+
+$_SESSION["post"] = $_POST;
+
+$name = "";
+$trigger = "";
+
+if ( isset( $_POST["name"] ) == true ) {
+	$name = htmlspecialchars( $_POST["name"], ENT_QUOTES );
+}
+
+if ( isset( $_POST["trigger"] ) == true ) {
+	$trigger = htmlspecialchars( $_POST["trigger"], ENT_QUOTES );
+}
+?>
 <!-- ここまで -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,6 +38,7 @@
 					</th>
 					<td>
 						<!-- ここから -->
+						<?php echo $name; ?>
 						<!-- ここまで -->
 					</td>
 				</tr>
@@ -31,6 +48,7 @@
 					</th>
 					<td>
 						<!-- ここから -->
+						<?php echo nl2br( $trigger ); ?>
 						<!-- ここまで -->
 					</td>
 				</tr>
